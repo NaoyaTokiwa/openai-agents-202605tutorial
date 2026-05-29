@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      # ローカルのプロジェクト全体を /app にマウント
+      - .:/work
+    working_dir: /work
+    stdin_open: true
+    tty: true
+    command: bash
